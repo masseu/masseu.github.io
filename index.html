@@ -18,7 +18,7 @@
 </head>
 <body>
   Enter your bio here. After you are done, copy the text below from the textfield<br>
-  <textarea id="field" rows="10" cols="80" onkeyup="calculate()"></textarea>
+  <textarea id="field" rows="5" cols="50" onkeyup="calculate()"></textarea>
   <br />
   <div id="count">150 </div> characters remaining
   <p>Preview</p>
@@ -28,7 +28,7 @@
 <script type="text/javascript">
 	var calculate = function(){
 		pos = doGetCaretPosition(document.getElementById('field'));
-		txt = jQuery("#field").val().replace(/ /g,' ');
+		txt = jQuery("#field").val().replace(/ /g,' ');
 		jQuery("#field").val(txt);
 		jQuery("#preview").html(txt.replace(/\n/g,'<br>'));
 		chars = 150 - jQuery("#field").val().length;
