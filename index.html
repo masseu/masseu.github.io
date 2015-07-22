@@ -28,7 +28,7 @@
 <script type="text/javascript">
 	var calculate = function(){
 		pos = doGetCaretPosition(document.getElementById('field'));
-		txt = jQuery("#field").val().replace(/ /g,'⠀');
+		txt = jQuery("#field").val().replace(/ /g,' ');
 		jQuery("#field").val(txt);
 		jQuery("#preview").html(txt.replace(/\n/g,'<br>'));
 		chars = 150 - jQuery("#field").val().length;
