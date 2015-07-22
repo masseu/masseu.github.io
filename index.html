@@ -18,15 +18,15 @@
 </style>
 </head>
 <body>
-  Enter your bio here. After you are done, click Build and then copy the text<br>
+  Enter your bio here. After you are done, copy the text<br>
   <textarea id="field" rows="10" cols="80" onkeyup="calculate()"></textarea>
-  <br /><button onclick="build()">Build</button>
   <br />
   <div id="count">150 </div> characters remaining
 </body>
 
 <script type="text/javascript">
 	var calculate = function(){
+		jQuery("#field").val(jQuery("#field").val().replace(/ /g,'⠀'));
 		chars = 150 - jQuery("#field").val().length;
 		jQuery("#count").html(chars);
 		if(chars < 0) {
@@ -34,11 +34,6 @@
 		}else {
 			jQuery("#count").removeClass("red");
 		}
-	};
-
-	var build = function(){
-		jQuery("#field").val(jQuery("#field").val().replace(/ /g,'⠀'));
-		calculate();
 	};
 </script>
 </html>
