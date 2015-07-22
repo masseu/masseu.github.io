@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+
   <title>Satel</title>
   <link rel="stylesheet" media="all" href="stylesheets/styles.css" type="text/css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -16,8 +18,9 @@
 </style>
 </head>
 <body>
-  This is an example<br>
+  Enter your bio here. After you are done, click Build and then copy the text<br>
   <textarea id="field" rows="10" cols="80" onkeyup="calculate()"></textarea>
+  <br /><button onclick="build()">Build</button>
   <br />
   <div id="count">150 </div> characters remaining
 </body>
@@ -31,6 +34,11 @@
 		}else {
 			jQuery("#count").removeClass("red");
 		}
+	};
+
+	var build = function(){
+		jQuery("#field").val(jQuery("#field").val().replace(/ /g,'⠀'));
+		calculate();
 	};
 </script>
 </html>
